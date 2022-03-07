@@ -7,40 +7,6 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 
 // sem začni psát svůj program
-/*
-let coinHunter = document.querySelector('#panacek');
-
-coinHunter.style.top = '50%';
-coinHunter.style.left = '50%';
-	
-
-
-
-window.addEventListener('keydown', moveTheHunter);
-
-
-function moveTheHunter(event) {
-	let x = 
-	let y = 
-
-	if (event.key === 38) {
-		x = x + 100   //up
-
-	} else if (event.key === 40) { 
-		x = x - 1 //down
-
-	} else if (event.key === 37) {
-		y = y + 1
-
-	} else if (event.key === 39) {
-		y = y - 1
-
-	}
-	
-
-}
-*/
-
 
 let getTheHeight = window.innerHeight;
 let getTheWidth = window.innerWidth;
@@ -60,7 +26,7 @@ window.addEventListener("keydown", onkeydown);
 
 function moveTheHunter(event) {
 	if (event.key === 38) {
-		initialHeight = (initialHeight + 1) + 'px';   //up
+		initialHeight = parsInt(initialHeight + 10) + 'px';   //up
 
 	} else if (event.key === 40) { 
 		initialHeight = (initialHeight - 1) + 'px';
