@@ -14,35 +14,55 @@ let getTheWidth = window.innerWidth;
 let initialHeight = getTheHeight / 2;
 let initialWidth = getTheWidth / 2;
 
+let moveBy = 10;
+
+window.addEventListener("keydown", onkeydown);
+
 
 function placeTheHunter() {
 	let coinHunter = document.querySelector('#panacek');
 
 	coinHunter.style.left = initialWidth + 'px';
 	coinHunter.style.top = initialHeight + 'px';
-}
+/*
+	function moveTheHunter(event) {
 
-window.addEventListener("keydown", onkeydown);
+
+		if (event.key === 38) {
+			coinHunter = window.getComputedStyle(coinHunter).getPropertyValue("top");
+
+			coinHunter.style.top = parseInt(coinHunter.style.top) + moveBy + 'px';
+	 
+	
+		} else if (event.key === 40) { 
+			coinHunter = window.getComputedStyle(coinHunter).getPropertyValue("top");
+			
+			coinHunter.style.top = parseInt(coinHunter.style.top) - moveBy + 'px';
+
+	
+		} else if (event.key === 37) {
+			coinHunter = window.getComputedStyle(coinHunter).getPropertyValue("left");
+	
+			coinHunter.style.left = parseInt(coinHunter.style.left) + moveBy + 'px';
+
+	
+		} else if (event.key === 39) {
+			coinHunter = window.getComputedStyle(coinHunter).getPropertyValue("left");
+			
+			coinHunter.style.left = parseInt(coinHunter.style.left) - moveBy + 'px';
+
+		}
+	}
+	*/
+}
 
 function moveTheHunter(event) {
-	if (event.key === 38) {
-		initialHeight = parsInt(initialHeight + 10) + 'px';   //up
 
-	} else if (event.key === 40) { 
-		initialHeight = (initialHeight - 1) + 'px';
-		//down
+	let coinHunter = document.querySelector('#panacek');
 
-	} else if (event.key === 37) {
-		initialWidth = (initialWidth + 1) + 'px';   
-
-
-	} else if (event.key === 39) {
-		initialWidth = (initialWidth - 1) + 'px';   
-
-
-	}
+	coinHunter.style.top = parseInt(coinHunter.style.top) + moveBy + 'px';
+	
 }
-
 
 
 
