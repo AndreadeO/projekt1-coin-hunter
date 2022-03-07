@@ -52,8 +52,8 @@ let initialWidth = getTheWidth / 2;
 function placeTheHunter() {
 	let coinHunter = document.querySelector('#panacek');
 
-	coinHunter.style.left = initialHeight + 'px';
-	coinHunter.style.top = initialWidth + 'px';
+	coinHunter.style.left = initialWidth + 'px';
+	coinHunter.style.top = initialHeight + 'px';
 }
 
 window.addEventListener("keydown", onkeydown);
