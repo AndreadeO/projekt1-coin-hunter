@@ -15,8 +15,6 @@ let coin, coinX, coinY, coinWidth, coinHeight;
 hunter = document.querySelector('#panacek');
 coin = document.querySelector('#mince');
 
-
-
 let getTheHeight = window.innerHeight;
 let getTheWidth = window.innerWidth;
 
@@ -47,23 +45,22 @@ function newCoin() {
 
 function byClickingTheKey(event) {
 
-	if (event.key === "ArrowLeft") { //nechodi
+	if (event.key === "ArrowLeft") { 
 		hunterY -= 10;
-		hunter.style.left = hunterY - "px";
+		hunter.style.left = hunterY + "px";
 		console.log("doleva");
 
-	} else if (event.key === "ArrowRight") { //chodi
+	} else if (event.key === "ArrowRight") { 
 		hunterY += 10;
 		hunter.style.left = hunterY + "px";
 		console.log("doprava");
 
-	} else if (event.key === "ArrowUp") { //nechodi
+	} else if (event.key === "ArrowUp") { 
 		hunterX = hunterX - 10;
-		hunter.style.top = hunterX - "px";
-
+		hunter.style.top = hunterX + "px";
 		console.log("nahoru");
 
-	} else if (event.key === "ArrowDown") {  //chodi
+	} else if (event.key === "ArrowDown") {  
 		hunterX = hunterX + 10;
 		hunter.style.top = hunterX + "px";
 		console.log("dolu");
@@ -72,5 +69,7 @@ function byClickingTheKey(event) {
 }
 
 function testTheColision() {
-
+	if (!( hunterX + hunterWidth < coinX || coinX + coinWidth < hunterX || hunterY + hunterHeight < coinY || coinY + coinHeight < hunterY)) {
+		// panacek a mince se prekryvaji
+	}
 }
