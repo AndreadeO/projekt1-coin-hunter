@@ -25,6 +25,9 @@ const imgCoin = document.getElementById('mince');
 coinWidth = imgCoin.width;
 coinHeight = imgCoin.height;
 
+coinX = Math.random() * window.innerWidth;
+coinY = Math.random() * window.innerHeight;
+
 const imgHunter = document.getElementById('panacek');
 hunterWidth = imgHunter.width;
 hunterHeight = imgHunter.height;
