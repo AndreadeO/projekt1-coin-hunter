@@ -81,7 +81,7 @@ function byClickingTheKey(event) {
 function testTheCollision() {
 	if (!( hunterX + hunterWidth < coinX || coinX + coinWidth < hunterX || hunterY + hunterHeight < coinY || coinY + coinHeight < hunterY)) {
 		// panacek a mince se prekryvaji
-		let score = document.querySelector('#score');
+		let score = document.getElementById('score');
 		score = 0;
 		score = score + 1;
 		console.log(score);
