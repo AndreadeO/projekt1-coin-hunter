@@ -21,8 +21,18 @@ let getTheWidth = window.innerWidth;
 hunterX = getTheHeight / 2;
 hunterY = getTheWidth / 2;
 
-console.log(hunterX)
-console.log(hunterY)
+const imgCoin = document.getElementById('mince');
+coinWidth = imgCoin.clientWidth;
+coinHeight = imgCoin.clientHeight;
+
+const imgHunter = document.getElementById('panacek');
+hunterWidth = imgHunter.clientWidth;
+hunterHeight = imgHunter.clientHeight;
+//console.log(hunterWidth)
+//console.log(hunterHeight)
+
+//console.log(hunterX)
+//console.log(hunterY)
 
 function byLoadingThePage() {
 
@@ -38,8 +48,8 @@ function placeTheHunter() {
 }
 
 function newCoin() {
-	coin.style.left = 100 +"px";
-	coin.style.top = 100 + "px";
+	coin.style.left = (Math.random() * getTheHeight) + "px";
+	coin.style.top = (Math.random() * getTheWidth) + "px";
 	console.log("umistime minci")
 }
 
@@ -68,8 +78,13 @@ function byClickingTheKey(event) {
 	}
 }
 
-function testTheColision() {
+function testTheCollision() {
 	if (!( hunterX + hunterWidth < coinX || coinX + coinWidth < hunterX || hunterY + hunterHeight < coinY || coinY + coinHeight < hunterY)) {
 		// panacek a mince se prekryvaji
+		let score = document.querySelector('#score');
+		score = 0;
+		score = score + 1;
+		console.log(score);
+
 	}
 }
