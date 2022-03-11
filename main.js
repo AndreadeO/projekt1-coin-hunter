@@ -8,7 +8,6 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 // sem začni psát svůj program
 
-
 let hunter, hunterX, hunterY, hunterWidth, hunterHeight;
 let coin, coinX, coinY, coinWidth, coinHeight;
 
@@ -50,8 +49,10 @@ function placeTheHunter() {
 }
 
 function newCoin() {
-	coin.style.left = (Math.random() * getTheWidth) + "px";
-	coin.style.top = (Math.random() * getTheHeight) + "px";
+	coinX = (Math.random() * getTheWidth);
+	coinY = (Math.random() * getTheHeight);
+	coin.style.left = coinX + "px";
+	coin.style.top = coinY + "px";
 	console.log("umistime minci")
 }
 
@@ -102,20 +103,23 @@ function byClickingTheKey(event) {
 
 }
 
+let score = document.getElementById('score');
+score_counter = 0
+score.innerHTML = score_counter;
+
 function testTheCollision() {
 	if (
 		!(
-		  hunterX + hunterWidth < coinX ||
-		  coinX + coinWidth < hunterX ||
-		  hunterY + hunterHeight < coinY ||
-		  coinY + coinHeight < hunterY
+		  ((hunterX + hunterWidth) < coinX) ||
+		  ((coinX + coinWidth) < hunterX) ||
+		  ((hunterY + hunterHeight) < coinY) ||
+		  ((coinY + coinHeight) < hunterY)
 		)
 	  ) {
 		// panacek a mince se prekryvaji
 		console.log("doslo ke kolizi");
-		//let score = document.getElementById('score');
-		//score = 0;
-		//score = score + 1;
+		score_counter = score_counter + 1;
+		score.innerHTML = score_counter;
 		//console.log(score);
 		newCoin();
 	} else {
