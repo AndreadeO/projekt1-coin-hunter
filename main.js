@@ -24,8 +24,8 @@ const imgCoin = document.getElementById('mince');
 coinWidth = imgCoin.width;
 coinHeight = imgCoin.height;
 
-coinX = Math.random() * window.innerWidth;  //osa X je horizontalni - sirka
-coinY = Math.random() * window.innerHeight;  //osa Y je vertikalni - vyska
+//coinX = Math.random() * window.innerWidth;  //osa X je horizontalni - sirka
+//coinY = Math.random() * window.innerHeight;  //osa Y je vertikalni - vyska
 
 hunterWidth = hunter.width;
 hunterHeight = hunter.height;
@@ -74,12 +74,16 @@ function byClickingTheKey(event) {
 		}
 		hunter.style.left = hunterX + "px";
 
+		hunter.src = 'obrazky/panacek-vlevo.png';
+
 	} else if (event.key === "ArrowRight") { 
 		hunterX += 10;
 		if (hunterX + hunterWidth > window.innerWidth) {
 			hunterX = window.innerWidth - hunterWidth;
 		}
 		hunter.style.left = hunterX + "px";
+
+		hunter.src = 'obrazky/panacek-vpravo.png';
 
 	} else if (event.key === "ArrowUp") { 
 		hunterY = hunterY - 10;
@@ -88,12 +92,17 @@ function byClickingTheKey(event) {
 		}
 		hunter.style.top = hunterY + "px";
 
+		hunter.src = 'obrazky/panacek-nahoru.png';
+
+
 	} else if (event.key === "ArrowDown") {  
 		hunterY = hunterY + 10;
 		if (hunterY + hunterHeight > window.innerHeight) {
 			hunterY = window.innerHeight - hunterHeight;
 		}
 		hunter.style.top = hunterY + "px";
+
+		hunter.src = 'obrazky/panacek.png';
 
 	}
 	testTheCollision();
