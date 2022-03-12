@@ -47,6 +47,22 @@ function newCoin() {
 	coinY = (Math.random() * getTheHeight);
 	coin.style.left = coinX + "px";
 	coin.style.top = coinY + "px";
+
+	if (coinX < 0) {
+		coinX = 0;
+
+	} else if (coinX + coinWidth > window.innerWidth) {
+		coinX = window.innerWidth - coinWidth;
+
+	} else if (coinY < 0) {
+		coinY = 0;
+
+	} else if (coinY + coinHeight > window.innerHeight) {
+		coinY = window.innerHeight - coinHeight;
+	}
+	//console.log('it works')
+
+
 }
 
 function byClickingTheKey(event) {
