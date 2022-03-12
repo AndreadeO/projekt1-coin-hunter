@@ -1,13 +1,3 @@
-// toto budeš potřebovat později
-/*
-if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
-	// panacek a mince se prekryvaji
-}
-*/
-
-
-// sem začni psát svůj program
-
 let hunter, hunterX, hunterY, hunterWidth, hunterHeight;
 let coin, coinX, coinY, coinWidth, coinHeight;
 
@@ -34,7 +24,6 @@ function byLoadingThePage() {
 
 	placeTheHunter();
 	newCoin();
-	
 }
 
 function placeTheHunter() {
@@ -60,9 +49,6 @@ function newCoin() {
 	} else if (coinY + coinHeight > window.innerHeight) {
 		coinY = window.innerHeight - coinHeight;
 	}
-	//console.log('it works')
-
-
 }
 
 function byClickingTheKey(event) {
@@ -106,7 +92,6 @@ function byClickingTheKey(event) {
 
 	}
 	testTheCollision();
-
 }
 
 let score = document.getElementById('score');
