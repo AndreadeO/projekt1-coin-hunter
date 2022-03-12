@@ -29,11 +29,6 @@ coinY = Math.random() * window.innerHeight;  //osa Y je vertikalni - vyska
 
 hunterWidth = hunter.width;
 hunterHeight = hunter.height;
-//console.log(hunterWidth)
-//console.log(hunterHeight)
-
-//console.log(hunterX)
-//console.log(hunterY)
 
 function byLoadingThePage() {
 
@@ -45,7 +40,6 @@ function byLoadingThePage() {
 function placeTheHunter() {
 	hunter.style.left = hunterX + "px";
 	hunter.style.top = hunterY + "px";
-	console.log("umistime panacek")
 }
 
 function newCoin() {
@@ -53,7 +47,6 @@ function newCoin() {
 	coinY = (Math.random() * getTheHeight);
 	coin.style.left = coinX + "px";
 	coin.style.top = coinY + "px";
-	console.log("umistime minci")
 }
 
 function byClickingTheKey(event) {
@@ -65,16 +58,12 @@ function byClickingTheKey(event) {
 		}
 		hunter.style.left = hunterX + "px";
 
-		console.log("doleva", hunter.style.left);
-
 	} else if (event.key === "ArrowRight") { 
 		hunterX += 10;
 		if (hunterX + hunterWidth > window.innerWidth) {
 			hunterX = window.innerWidth - hunterWidth;
 		}
 		hunter.style.left = hunterX + "px";
-
-		console.log("doprava", hunter.style.left);
 
 	} else if (event.key === "ArrowUp") { 
 		hunterY = hunterY - 10;
@@ -83,8 +72,6 @@ function byClickingTheKey(event) {
 		}
 		hunter.style.top = hunterY + "px";
 
-		console.log("nahoru", hunter.style.top);
-
 	} else if (event.key === "ArrowDown") {  
 		hunterY = hunterY + 10;
 		if (hunterY + hunterHeight > window.innerHeight) {
@@ -92,20 +79,14 @@ function byClickingTheKey(event) {
 		}
 		hunter.style.top = hunterY + "px";
 
-		console.log("dolu", hunter.style.top);
-
 	}
 	testTheCollision();
-	console.log("panacekX", hunterX);
-	console.log("panacekY", hunterY);
-	console.log("minceX", coinX);
-	console.log("minceX", coinY);
 
 }
 
 let score = document.getElementById('score');
-score_counter = 0
-score.innerHTML = score_counter;
+scoreCounter = 0
+score.innerHTML = scoreCounter;
 
 function testTheCollision() {
 	if (
@@ -117,13 +98,15 @@ function testTheCollision() {
 		)
 	  ) {
 		// panacek a mince se prekryvaji
-		console.log("doslo ke kolizi");
-		score_counter = score_counter + 1;
-		score.innerHTML = score_counter;
-		//console.log(score);
+		scoreCounter = scoreCounter + 1;
+		score.innerHTML = scoreCounter;
+
 		newCoin();
-	} else {
-		console.log("nedoslo");
-	}
+
+		if (scoreCounter > 5) {
+			alert("You win!!!");
+		}
+	} 
+
 }
 
