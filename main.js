@@ -101,12 +101,29 @@ function testTheCollision() {
 		scoreCounter = scoreCounter + 1;
 		score.innerHTML = scoreCounter;
 
+		audioCoin();
 		newCoin();
 
 		if (scoreCounter > 5) {
+			audioFanfare();
 			alert("You win!!!");
 		}
 	} 
 
 }
 
+function startAudio() {
+	let audioFile = document.getElementById('hudba');
+	audioFile.play();
+	
+}
+
+function audioCoin() {
+	let audioCoin = document.getElementById('zvukmince');
+	audioCoin.play();
+}
+
+function audioFanfare() {
+	let audioFanfare = document.getElementById('zvukfanfara');
+	audioFanfare.play();
+}
